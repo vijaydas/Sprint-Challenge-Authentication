@@ -24,9 +24,14 @@ class JokeList extends React.Component {
 
   componentDidMount() {
     const endpoint = 'http://localhost:3300/api/jokes';
-
+    const jwt = localStorage.getItem('jwt');
+   
     axios
-      .get(endpoint)
+      .get(endpoint, {
+        headers: {
+          Authorization: jwt
+        }
+       })
       .then(res => {
         console.log('jokes', res.data);
         this.setState(() => ({ jokes: res.data }));

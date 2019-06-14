@@ -16,3 +16,30 @@ body {
   padding: 2rem;
   text-align: center
 }
+
+li {
+  list-style: none;
+  color: black;
+  font-size: 18px;
+}
+
+
+form {
+  margin: 0 auto;
+  max-width: 200px;
+  background-color: hsl(216, 33%, 97%);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: lightblue;
+  color: black;
+  font-size: 18px;
+}
+
+button {
+  background-color: lightgrey;
+}

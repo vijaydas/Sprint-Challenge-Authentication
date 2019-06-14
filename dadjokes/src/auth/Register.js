@@ -13,7 +13,7 @@ class Register extends React.Component {
         <h2>Register</h2>
         <form onSubmit={this.submitForm}>
           <div>
-            <label htmlFor="username" />
+          <label htmlFor="username">Username</label>
             <input
               id="username"
               onChange={this.handleChange}
@@ -23,7 +23,7 @@ class Register extends React.Component {
           </div>
 
           <div>
-            <label htmlFor="password" />
+          <label htmlFor="password">Password</label>
             <input
               id="password"
               onChange={this.handleChange}
@@ -49,7 +49,7 @@ class Register extends React.Component {
 
   submitForm = event => {
     event.preventDefault();
-    const endpoint = "http://localhost:3300/register";
+    const endpoint = "http://localhost:3300/api/register";
     axios
       .post(endpoint, this.state)
       .then(res => {
