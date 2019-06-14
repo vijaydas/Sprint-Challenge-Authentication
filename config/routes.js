@@ -26,6 +26,19 @@ function register(req, res) {
 
 function login(req, res) {
   // implement user login
+  const { username, password } = req.body
+  if (username && password) {
+    db('users').where({username}).first()
+    .then(response => {
+      const user = response
+      if (user) {
+        const token = generateToken(response.username)
+        res.status(200).json({token: token})
+      } else {
+        res.status(400).json({message: "no user"})
+      }
+    })
+  }
 }
 
 function getJokes(req, res) {
